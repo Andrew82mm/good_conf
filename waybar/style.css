@@ -1,0 +1,156 @@
+@import "latte.css";
+
+* {
+  font-family: "Inter", "Roboto", "Font Awesome 6 Free", "Font Awesome 5 Free", "Noto Sans", sans-serif;
+  font-size: 13px;
+  border: none;
+  border-radius: 0;
+}
+
+window#waybar {
+  background: transparent;
+  color: @text;
+}
+
+tooltip {
+  background-color: alpha(@base, 0.96);
+  border: 1px solid @crust;
+  border-radius: 12px;
+  color: @text;
+}
+
+tooltip label {
+  color: @text;
+}
+
+#workspaces,
+#window,
+#clock,
+#language,
+#custom-wifi,
+#custom-bluetooth,
+#custom-power-profiles,
+#battery,
+#custom-power {
+  margin: 4px 3px;
+  padding: 0 12px;
+  border-radius: 999px;
+  background-color: alpha(@mantle, 0.82);
+  color: @text;
+}
+
+.modules-left > widget:first-child > * {
+  margin-left: 6px;
+}
+
+.modules-right > widget:last-child > * {
+  margin-right: 6px;
+}
+
+#workspaces {
+  padding: 0 6px;
+}
+
+#workspaces button {
+  margin: 3px 1px;
+  padding: 0 8px;
+  border-radius: 999px;
+  background: transparent;
+  color: @subtext1;
+  transition: background-color 0.15s ease;
+}
+
+#workspaces button:hover {
+  background-color: alpha(@surface0, 0.45);
+  color: @text;
+}
+
+#workspaces button.active {
+  background-color: @blue;
+  color: @base;
+}
+
+#workspaces button.urgent {
+  background-color: @red;
+  color: @base;
+}
+
+#window {
+  color: @subtext0;
+}
+
+#window.empty {
+  background-color: transparent;
+  color: transparent;
+  margin: 0;
+  padding: 0;
+}
+
+#clock {
+  background-color: alpha(@crust, 0.86);
+  font-weight: 600;
+}
+
+#language {
+  color: @blue;
+}
+
+#custom-wifi.connected {
+  color: @blue;
+}
+
+#custom-wifi.disconnected {
+  color: @subtext0;
+}
+
+#custom-wifi.error {
+  color: @red;
+}
+
+#custom-bluetooth.connected {
+  color: @blue;
+}
+
+#custom-bluetooth.on {
+  color: @text;
+}
+
+#custom-bluetooth.off {
+  color: @subtext0;
+}
+
+#custom-bluetooth.absent {
+  color: @subtext0;
+}
+
+#custom-power-profiles {
+  color: @subtext0;
+}
+
+#battery.charging,
+#battery.plugged {
+  color: @green;
+}
+
+#battery.warning {
+  color: @peach;
+}
+
+#battery.critical:not(.charging) {
+  color: @red;
+  animation-name: blink;
+  animation-duration: 0.8s;
+  animation-timing-function: steps(12);
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+@keyframes blink {
+  to {
+    background-color: alpha(@red, 0.28);
+  }
+}
+
+#custom-power {
+  color: @red;
+}

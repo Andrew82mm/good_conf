@@ -1,0 +1,160 @@
+/* Catppuccin Latte */
+
+* {
+    base: #eff1f5;
+    mantle: #e6e9ef;
+    crust: #dce0e8;
+
+    surface0: #ccd0da;
+    surface1: #bcc0cc;
+    surface2: #acb0be;
+
+    overlay0: #9ca0b0;
+    subtext0: #6c6f85;
+    subtext1: #5c5f77;
+    text: #4c4f69;
+
+    blue: #1e66f5;
+    lavender: #7287fd;
+    sapphire: #209fb5;
+    teal: #179299;
+    green: #40a02b;
+    peach: #fe640b;
+    red: #d20f39;
+
+    background-color: transparent;
+    text-color: @text;
+    font: "Inter, Roboto, sans-serif 13";
+}
+
+window {
+    background-color: rgba(239, 241, 245, 0.94);
+    border: 1px;
+    border-color: @crust;
+    border-radius: 20px;
+    padding: 18px;
+    width: 640px;
+
+    location: center;
+    anchor: center;
+    x-offset: 0px;
+    y-offset: 0px;
+}
+
+mainbox {
+    spacing: 12px;
+    children: [ inputbar, mode-switcher, message, listview ];
+}
+
+inputbar {
+    children: [ prompt, entry ];
+    background-color: @mantle;
+    border: 1px;
+    border-color: @crust;
+    border-radius: 999px;
+    padding: 8px 12px;
+    spacing: 8px;
+}
+
+prompt {
+    text-color: @blue;
+}
+
+entry {
+    placeholder-color: @subtext0;
+}
+
+mode-switcher {
+    spacing: 6px;
+}
+
+button {
+    background-color: @mantle;
+    border: 1px;
+    border-color: @crust;
+    border-radius: 999px;
+    padding: 6px 12px;
+    text-color: @subtext0;
+}
+
+button selected {
+    background-color: @blue;
+    border-color: @blue;
+    text-color: @base;
+}
+
+message {
+    background-color: @mantle;
+    border: 1px;
+    border-color: @crust;
+    border-radius: 12px;
+    padding: 8px 10px;
+}
+
+textbox {
+    text-color: @subtext1;
+}
+
+listview {
+    lines: 8;
+    columns: 1;
+    spacing: 4px;
+    scrollbar: false;
+    dynamic: true;
+}
+
+element {
+    border-radius: 12px;
+    padding: 8px 10px;
+    spacing: 8px;
+}
+
+element-icon {
+    size: 18px;
+}
+
+element normal.normal,
+element alternate.normal {
+    background-color: transparent;
+    text-color: @text;
+}
+
+element normal.urgent {
+    text-color: @red;
+}
+
+element normal.active {
+    background-color: @surface0;
+    text-color: @text;
+}
+
+element selected.normal {
+    background-color: @blue;
+    text-color: @base;
+}
+
+element selected.active {
+    background-color: @lavender;
+    text-color: @base;
+}
+
+element selected.urgent {
+    background-color: @red;
+    text-color: @base;
+}
+
+scrollbar {
+    handle-color: @surface1;
+    background-color: transparent;
+    width: 6px;
+    padding: 0px;
+}
+
+error-message {
+    background-color: rgba(210, 15, 57, 0.08);
+    border: 1px;
+    border-color: @red;
+    border-radius: 12px;
+    padding: 8px 10px;
+    text-color: @red;
+}

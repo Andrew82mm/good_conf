@@ -1,0 +1,60 @@
+* {
+  base: #eff1f5;
+  mantle: #e6e9ef;
+  crust: #dce0e8;
+  text: #4c4f69;
+  subtext0: #6c6f85;
+  blue: #1e66f5;
+  lavender: #7287fd;
+  red: #d20f39;
+
+  background-color: transparent;
+  border-color: transparent;
+  font: "Inter 12";
+}
+
+window {
+  background-color: rgba(239, 241, 245, 0.95);
+  border: 1px;
+  border-color: @crust;
+  border-radius: 16px;
+  padding: 10px;
+}
+
+inputbar {
+  children: [prompt, entry];
+  margin: 0 0 8px 0;
+}
+
+prompt {
+  text-color: @blue;
+  padding: 0 8px 0 0;
+}
+
+entry {
+  text-color: @text;
+}
+
+listview {
+  lines: 8;
+  columns: 1;
+  scrollbar: false;
+}
+
+element {
+  padding: 6px 8px;
+  border-radius: 10px;
+}
+
+element normal normal {
+  text-color: @text;
+}
+
+element alternate normal {
+  text-color: @text;
+}
+
+element selected {
+  background-color: @blue;
+  text-color: @base;
+}

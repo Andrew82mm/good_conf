@@ -1,0 +1,11 @@
+configuration {
+    show-icons: true;
+    drun-display-format: "{name}";
+
+    display-drun: "Приложения";
+    display-run: "Выполнить";
+    display-window: "Окна";
+    show-icons: false;
+}
+
+@theme "~/.config/rofi/latte.rasi"

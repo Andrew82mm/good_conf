@@ -1,0 +1,108 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 38,
+  "spacing": 4,
+  "margin-top": 6,
+  "margin-left": 6,
+  "margin-right": 6,
+  "exclusive": true,
+  "ipc": true,
+
+  "modules-left": [
+    "hyprland/workspaces",
+    "hyprland/window"
+  ],
+
+  "modules-center": [
+    "clock"
+  ],
+
+  "modules-right": [
+    "hyprland/language",
+    "custom/wifi",
+    "custom/bluetooth",
+    "custom/power-profiles",
+    "battery",
+    "custom/power"
+  ],
+
+  "hyprland/workspaces": {
+    "format": "{name}",
+    "on-click": "activate",
+    "on-scroll-up": "hyprctl dispatch workspace e+1",
+    "on-scroll-down": "hyprctl dispatch workspace e-1",
+    "warp-on-scroll": false,
+    "all-outputs": false,
+    "active-only": false,
+    "show-special": false,
+    "sort-by-number": true
+  },
+
+  "hyprland/window": {
+    "format": "{}",
+    "max-length": 48,
+    "separate-outputs": false
+  },
+
+  "clock": {
+    "format": "{:%a, %d %b %H:%M}",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "locale": "ru_RU.utf8",
+    "interval": 10
+  },
+
+  "hyprland/language": {
+    "format": "{short}",
+    "tooltip-format": "Раскладка: {long}"
+  },
+
+  "custom/wifi": {
+    "exec": "$HOME/.config/waybar/scripts/wifi.sh status",
+    "return-type": "json",
+    "interval": 5,
+    "on-click": "$HOME/.config/waybar/scripts/wifi.sh menu",
+    "tooltip": true
+  },
+
+  "custom/bluetooth": {
+    "exec": "$HOME/.config/waybar/scripts/bluetooth.sh status",
+    "return-type": "json",
+    "interval": 5,
+    "on-click": "$HOME/.config/waybar/scripts/bluetooth.sh menu",
+    "tooltip": true
+  },
+
+  "custom/power-profiles": {
+    "exec": "$HOME/.config/waybar/scripts/power-profile.sh status",
+    "return-type": "json",
+    "interval": 10,
+    "on-click": "$HOME/.config/waybar/scripts/power-profile.sh menu",
+    "tooltip": true
+  },
+
+  "battery": {
+    "bat": "BAT0",
+    "states": {
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{capacity}% {icon}",
+    "format-charging": "{capacity}% ",
+    "format-plugged": "{capacity}% ",
+    "format-full": "{capacity}% {icon}",
+    "format-icons": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+
+  "custom/power": {
+    "format": "",
+    "on-click": "$HOME/.config/waybar/scripts/power-menu.sh",
+    "tooltip": false
+  }
+}
